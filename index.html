@@ -775,14 +775,9 @@
         
 
         <!-- FAQ Content Sections -->
-     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Section</title>
-    <style>
+    
+
+<style>
         .faq-section {
             padding: 50px;
             background-color: #f9f9f9;
@@ -793,14 +788,21 @@
             margin-bottom: 20px;
             color: #333;
         }
+        .section-description {
+            margin-bottom: 30px;
+            color: #555;
+        }
         .faq-tabs {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 30px; /* Increased gap */
+            margin-bottom: 30px; /* Increased margin below the tabs */
+        }
+        .faq-tab-image-container {
+            text-align: center;
         }
         .faq-tab-image {
-            width: 100px;
+            width: 70px; /* Reduced size */
             height: auto;
             cursor: pointer;
             border: 2px solid transparent;
@@ -811,13 +813,16 @@
             border: 2px solid #555;
             transform: scale(1.05);
         }
+        .faq-tab-label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #444;
+            font-weight: bold;
+        }
         .faq-items {
             display: none;
             text-align: left;
         }
-      img{
-        width: 20px;
-      }
         .faq-items.active {
             display: block;
         }
@@ -858,12 +863,25 @@
         <p class="section-description">Click on a category to view related FAQs.</p>
 
         <div class="faq-tabs">
-            <img src="img/car-icon.png" alt="Car FAQs" class="faq-tab-image" onclick="showFaqSection('car')" />
-            <img src="img/bike-icon.png" alt="Bike FAQs" class="faq-tab-image" onclick="showFaqSection('bike')" />
-            <img src="img/life-icon.png" alt="Life FAQs" class="faq-tab-image" onclick="showFaqSection('life')" />
-            <img src="img/health-icon.png" alt="Health FAQs" class="faq-tab-image" onclick="showFaqSection('health')" />
+            <div class="faq-tab-image-container">
+                <img src="img/car-icon.png" alt="Car FAQs" class="faq-tab-image" onclick="showFaqSection('car')" />
+                <div class="faq-tab-label">Car FAQs</div>
+            </div>
+            <div class="faq-tab-image-container">
+                <img src="img/bike-icon.png" alt="Bike FAQs" class="faq-tab-image" onclick="showFaqSection('bike')" />
+                <div class="faq-tab-label">Bike FAQs</div>
+            </div>
+            <div class="faq-tab-image-container">
+                <img src="img/life-icon.png" alt="Life FAQs" class="faq-tab-image" onclick="showFaqSection('life')" />
+                <div class="faq-tab-label">Life FAQs</div>
+            </div>
+            <div class="faq-tab-image-container">
+                <img src="img/health-icon.png" alt="Health FAQs" class="faq-tab-image" onclick="showFaqSection('health')" />
+                <div class="faq-tab-label">Health FAQs</div>
+            </div>
         </div>
 
+        <!-- Car FAQ Section -->
         <div class="faq-items" id="car">
             <div class="faq-content">
                 <div class="faq-item">
@@ -882,43 +900,143 @@
                     <h4 class="faq-question">What factors affect my car insurance premium?</h4>
                     <p class="faq-answer">Premiums depend on factors like car make and model, age, driver’s history, and chosen coverage type.</p>
                 </div>
-                <div class="faq-item">
+                <!-- Only 4 questions shown initially -->
+                <div class="faq-item more-questions" style="display: none;">
                     <h4 class="faq-question">What is the IDV in car insurance?</h4>
                     <p class="faq-answer">IDV is the maximum sum insured by the insurer in case of total loss or theft, calculated based on market value.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">How do I reduce my car insurance premium?</h4>
+                    <p class="faq-answer">You can reduce your premium by opting for a higher deductible, comparing plans, and maintaining a good driving record.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the grace period for car insurance?</h4>
+                    <p class="faq-answer">Most insurers offer a grace period of up to 15 days after the due date to renew your policy without any penalties.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I transfer my car insurance?</h4>
+                    <p class="faq-answer">Yes, car insurance can be transferred to a new owner when selling the car, following the insurer's process.</p>
                 </div>
                 <span class="read-more" onclick="showAll('car')">Read more...</span>
             </div>
         </div>
 
+        <!-- Bike FAQ Section -->
         <div class="faq-items" id="bike">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What does bike insurance cover?</h4>
                     <p class="faq-answer">Bike insurance covers damages to the motorcycle, third-party liability, and rider injuries.</p>
                 </div>
-                <!-- Additional bike FAQs -->
+                <div class="faq-item">
+                    <h4 class="faq-question">How does bike insurance differ from car insurance?</h4>
+                    <p class="faq-answer">Bike insurance covers motorcycle-related risks, whereas car insurance covers risks related to four-wheel vehicles.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Is theft of my bike covered under insurance?</h4>
+                    <p class="faq-answer">Yes, theft is covered under comprehensive bike insurance policies.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What is a No Claim Bonus (NCB) in bike insurance?</h4>
+                    <p class="faq-answer">NCB is a discount offered for not filing any claims during the previous policy period, which can reduce your premium.</p>
+                </div>
+                <!-- Only 4 questions shown initially -->
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">How can I file a bike insurance claim?</h4>
+                    <p class="faq-answer">To file a claim, contact your insurer, provide necessary documentation, and follow their claims process.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What factors affect my bike insurance premium?</h4>
+                    <p class="faq-answer">Premiums depend on the bike’s model, age, rider’s experience, and location.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I add a pillion rider to my bike insurance?</h4>
+                    <p class="faq-answer">Yes, pillion rider cover can be added as an optional add-on to bike insurance policies.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What does third-party bike insurance cover?</h4>
+                    <p class="faq-answer">Third-party bike insurance covers liabilities for damages or injuries caused to third parties in an accident.</p>
+                </div>
                 <span class="read-more" onclick="showAll('bike')">Read more...</span>
             </div>
         </div>
 
+        <!-- Life FAQ Section -->
         <div class="faq-items" id="life">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What does life insurance cover?</h4>
                     <p class="faq-answer">Life insurance provides financial protection to the policyholder's beneficiaries in case of death.</p>
                 </div>
-                <!-- Additional life FAQs -->
+                <div class="faq-item">
+                    <h4 class="faq-question">What are the different types of life insurance?</h4>
+                    <p class="faq-answer">The main types are term insurance, whole life insurance, and endowment policies, each offering different coverage and benefits.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">How much life insurance do I need?</h4>
+                    <p class="faq-answer">The amount needed depends on factors like your income, liabilities, and the number of dependents.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Can I change my life insurance policy?</h4>
+                    <p class="faq-answer">Yes, you can make changes to your life insurance policy, such as increasing the coverage or modifying beneficiaries.</p>
+                </div>
+                <!-- Only 4 questions shown initially -->
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is a term life insurance policy?</h4>
+                    <p class="faq-answer">Term life insurance provides coverage for a specific period, typically 10 to 30 years, at lower premiums.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I take a loan against my life insurance?</h4>
+                    <p class="faq-answer">Yes, you can take a loan against the cash value of certain types of life insurance policies.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the grace period for life insurance premiums?</h4>
+                    <p class="faq-answer">Life insurance policies typically have a grace period of 30 days after the due date to make the premium payment.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the beneficiary in a life insurance policy?</h4>
+                    <p class="faq-answer">The beneficiary is the person or entity who receives the insurance payout upon the policyholder’s death.</p>
+                </div>
                 <span class="read-more" onclick="showAll('life')">Read more...</span>
             </div>
         </div>
 
+        <!-- Health FAQ Section -->
         <div class="faq-items" id="health">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What is covered under health insurance?</h4>
                     <p class="faq-answer">Health insurance covers medical expenses, including hospitalization, treatment, and medication costs.</p>
                 </div>
-                <!-- Additional health FAQs -->
+                <div class="faq-item">
+                    <h4 class="faq-question">Does health insurance cover pre-existing conditions?</h4>
+                    <p class="faq-answer">Yes, many health insurance plans cover pre-existing conditions after a waiting period.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Can I get health insurance without a medical exam?</h4>
+                    <p class="faq-answer">Yes, many health insurance providers offer coverage without a medical exam, depending on your age and health history.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What is a deductible in health insurance?</h4>
+                    <p class="faq-answer">A deductible is the amount you must pay out-of-pocket before your insurance coverage kicks in for medical expenses.</p>
+                </div>
+                <!-- Only 4 questions shown initially -->
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I add family members to my health insurance plan?</h4>
+                    <p class="faq-answer">Yes, most health insurance policies offer family plans where you can add spouse, children, and parents.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the waiting period in health insurance?</h4>
+                    <p class="faq-answer">The waiting period is the time you need to wait before certain benefits, like maternity or pre-existing condition coverage, kick in.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Is maternity care covered under health insurance?</h4>
+                    <p class="faq-answer">Yes, many health insurance policies offer maternity coverage after a specified waiting period.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is cashless hospitalization?</h4>
+                    <p class="faq-answer">Cashless hospitalization means your insurance provider will directly settle your medical bills with the hospital without you needing to pay upfront.</p>
+                </div>
                 <span class="read-more" onclick="showAll('health')">Read more...</span>
             </div>
         </div>
@@ -936,14 +1054,11 @@
         }
 
         function showAll(sectionId) {
-            var faqItems = document.querySelectorAll(`#${sectionId} .faq-item`);
+            var faqItems = document.querySelectorAll(`#${sectionId} .more-questions`);
             faqItems.forEach(item => item.style.display = 'block');
+            document.querySelector(`#${sectionId} .read-more`).style.display = 'none';
         }
     </script>
-</body>
-</html>
-
-
 
 
 
