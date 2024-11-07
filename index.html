@@ -856,6 +856,92 @@
             margin-top: 10px;
         }
     </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        .faq-section {
+            padding: 50px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .section-description {
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .faq-tab-image-container {
+            text-align: center;
+        }
+        .faq-tab-image {
+            width: 60px; /* Uniform size for all images */
+            height: 60px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: border 0.3s ease, transform 0.3s ease;
+        }
+        .faq-tab-image:hover {
+            border: 2px solid #555;
+            transform: scale(1.05);
+        }
+        .faq-tab-label {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #444;
+            font-weight: bold;
+        }
+        .faq-items {
+            display: none;
+            text-align: left;
+        }
+        .faq-items.active {
+            display: block;
+        }
+        .faq-content {
+            margin-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .faq-question {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #444;
+            cursor: pointer;
+        }
+        .faq-answer {
+            font-size: 16px;
+            color: #666;
+            display: none;
+        }
+        .faq-item:hover .faq-answer {
+            display: block;
+        }
+        .read-more {
+            color: #007BFF;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <section id="faq" class="faq-section">
@@ -879,6 +965,14 @@
                 <img src="img/health-icon.png" alt="Health FAQs" class="faq-tab-image" onclick="showFaqSection('health')" />
                 <div class="faq-tab-label">Health FAQs</div>
             </div>
+            <div class="faq-tab-image-container">
+                <img src="img/travel-icon.png" alt="Travel FAQs" class="faq-tab-image" onclick="showFaqSection('travel')" />
+                <div class="faq-tab-label">Travel FAQs</div>
+            </div>
+            <div class="faq-tab-image-container">
+                <img src="img/property-icon.png" alt="Property FAQs" class="faq-tab-image" onclick="showFaqSection('property')" />
+                <div class="faq-tab-label">Property FAQs</div>
+            </div>
         </div>
 
         <!-- Car FAQ Section -->
@@ -900,7 +994,6 @@
                     <h4 class="faq-question">What factors affect my car insurance premium?</h4>
                     <p class="faq-answer">Premiums depend on factors like car make and model, age, driver’s history, and chosen coverage type.</p>
                 </div>
-                <!-- Only 4 questions shown initially -->
                 <div class="faq-item more-questions" style="display: none;">
                     <h4 class="faq-question">What is the IDV in car insurance?</h4>
                     <p class="faq-answer">IDV is the maximum sum insured by the insurer in case of total loss or theft, calculated based on market value.</p>
@@ -940,7 +1033,6 @@
                     <h4 class="faq-question">What is a No Claim Bonus (NCB) in bike insurance?</h4>
                     <p class="faq-answer">NCB is a discount offered for not filing any claims during the previous policy period, which can reduce your premium.</p>
                 </div>
-                <!-- Only 4 questions shown initially -->
                 <div class="faq-item more-questions" style="display: none;">
                     <h4 class="faq-question">How can I file a bike insurance claim?</h4>
                     <p class="faq-answer">To file a claim, contact your insurer, provide necessary documentation, and follow their claims process.</p>
@@ -950,12 +1042,12 @@
                     <p class="faq-answer">Premiums depend on the bike’s model, age, rider’s experience, and location.</p>
                 </div>
                 <div class="faq-item more-questions" style="display: none;">
-                    <h4 class="faq-question">Can I add a pillion rider to my bike insurance?</h4>
-                    <p class="faq-answer">Yes, pillion rider cover can be added as an optional add-on to bike insurance policies.</p>
+                    <h4 class="faq-question">What is third-party bike insurance?</h4>
+                    <p class="faq-answer">Third-party bike insurance covers liabilities for damages or injuries caused to third parties in an accident.</p>
                 </div>
                 <div class="faq-item more-questions" style="display: none;">
-                    <h4 class="faq-question">What does third-party bike insurance cover?</h4>
-                    <p class="faq-answer">Third-party bike insurance covers liabilities for damages or injuries caused to third parties in an accident.</p>
+                    <h4 class="faq-question">Can I add accessories to my bike insurance?</h4>
+                    <p class="faq-answer">Yes, you can add accessories to your policy for an additional premium.</p>
                 </div>
                 <span class="read-more" onclick="showAll('bike')">Read more...</span>
             </div>
@@ -980,7 +1072,6 @@
                     <h4 class="faq-question">Can I change my life insurance policy?</h4>
                     <p class="faq-answer">Yes, you can make changes to your life insurance policy, such as increasing the coverage or modifying beneficiaries.</p>
                 </div>
-                <!-- Only 4 questions shown initially -->
                 <div class="faq-item more-questions" style="display: none;">
                     <h4 class="faq-question">What is a term life insurance policy?</h4>
                     <p class="faq-answer">Term life insurance provides coverage for a specific period, typically 10 to 30 years, at lower premiums.</p>
@@ -1020,7 +1111,6 @@
                     <h4 class="faq-question">What is a deductible in health insurance?</h4>
                     <p class="faq-answer">A deductible is the amount you must pay out-of-pocket before your insurance coverage kicks in for medical expenses.</p>
                 </div>
-                <!-- Only 4 questions shown initially -->
                 <div class="faq-item more-questions" style="display: none;">
                     <h4 class="faq-question">Can I add family members to my health insurance plan?</h4>
                     <p class="faq-answer">Yes, most health insurance policies offer family plans where you can add spouse, children, and parents.</p>
@@ -1040,26 +1130,109 @@
                 <span class="read-more" onclick="showAll('health')">Read more...</span>
             </div>
         </div>
+
+        <!-- Travel FAQ Section -->
+        <div class="faq-items" id="travel">
+            <div class="faq-content">
+                <div class="faq-item">
+                    <h4 class="faq-question">What is travel insurance?</h4>
+                    <p class="faq-answer">Travel insurance covers unexpected events during travel, including medical emergencies, trip cancellations, and lost luggage.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Do I need travel insurance for international trips?</h4>
+                    <p class="faq-answer">Yes, it is highly recommended to have travel insurance when traveling internationally for safety and coverage against unforeseen events.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What does travel insurance cover?</h4>
+                    <p class="faq-answer">It covers medical expenses, trip interruption, baggage loss, and other travel-related emergencies.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Is travel insurance refundable?</h4>
+                    <p class="faq-answer">It depends on the insurer's policy, but many offer a refund if the trip is canceled within a specified period after purchase.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is trip cancellation coverage?</h4>
+                    <p class="faq-answer">Trip cancellation coverage reimburses you for non-refundable trip costs if you cancel due to a covered reason like illness or emergency.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I add my family members to my travel insurance policy?</h4>
+                    <p class="faq-answer">Yes, many travel insurance policies allow you to cover your family members under one policy.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Does travel insurance cover lost baggage?</h4>
+                    <p class="faq-answer">Yes, travel insurance can cover costs for lost baggage, including essential items like clothing and toiletries.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Does travel insurance cover medical emergencies?</h4>
+                    <p class="faq-answer">Yes, most travel insurance policies include medical emergency coverage for accidents or illness while traveling.</p>
+                </div>
+                <span class="read-more" onclick="showAll('travel')">Read more...</span>
+            </div>
+        </div>
+
+        <!-- Property FAQ Section -->
+        <div class="faq-items" id="property">
+            <div class="faq-content">
+                <div class="faq-item">
+                    <h4 class="faq-question">What is property insurance?</h4>
+                    <p class="faq-answer">Property insurance covers the risks of damage to property due to theft, fire, natural disasters, or other incidents.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Is property insurance mandatory?</h4>
+                    <p class="faq-answer">While not mandatory for personal property, certain mortgages or leases may require property insurance.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What does property insurance cover?</h4>
+                    <p class="faq-answer">It covers damages from fire, vandalism, theft, and natural disasters. Some policies also cover loss of income from rental properties.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">Does property insurance cover natural disasters?</h4>
+                    <p class="faq-answer">Property insurance typically covers natural disasters, but specific coverage depends on the policy and location.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the difference between home insurance and property insurance?</h4>
+                    <p class="faq-answer">Home insurance is a type of property insurance specifically designed for residential properties, while property insurance can cover any type of property, including commercial.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">Can I insure my rental property?</h4>
+                    <p class="faq-answer">Yes, property insurance can be purchased for rental properties, protecting you against damage or loss of income.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">How do I file a property insurance claim?</h4>
+                    <p class="faq-answer">To file a claim, contact your insurance provider, submit necessary documentation, and follow their claims process.</p>
+                </div>
+                <div class="faq-item more-questions" style="display: none;">
+                    <h4 class="faq-question">What is the coverage for personal property?</h4>
+                    <p class="faq-answer">Personal property coverage protects belongings such as furniture, electronics, clothing, and valuables against damage or theft.</p>
+                </div>
+                <span class="read-more" onclick="showAll('property')">Read more...</span>
+            </div>
+        </div>
+
     </section>
 
     <script>
-        function showFaqSection(sectionId) {
-            var sections = document.querySelectorAll('.faq-items');
-            sections.forEach(section => {
-                section.classList.remove('active');
-                if (section.id === sectionId) {
-                    section.classList.add('active');
-                }
+        function showFaqSection(section) {
+            var allSections = document.querySelectorAll('.faq-items');
+            allSections.forEach(function (el) {
+                el.classList.remove('active');
             });
+
+            var selectedSection = document.getElementById(section);
+            selectedSection.classList.add('active');
         }
 
-        function showAll(sectionId) {
-            var faqItems = document.querySelectorAll(`#${sectionId} .more-questions`);
-            faqItems.forEach(item => item.style.display = 'block');
-            document.querySelector(`#${sectionId} .read-more`).style.display = 'none';
+        function showAll(section) {
+            var questions = document.querySelectorAll('#' + section + ' .more-questions');
+            questions.forEach(function (el) {
+                el.style.display = 'block';
+            });
+
+            document.querySelector('#' + section + ' .read-more').style.display = 'none';
         }
     </script>
-
+</body>
+</html>
 
 
  <!-- Footer Start -->
@@ -1100,7 +1273,7 @@
           <i class="fa fa-map-marker-alt me-3"></i>Nsure Insurance IMF, 4th Floor, AWIFS, Vasavai MPM Grand, Nagarjuna Nagar Colony, Ameerpet, Hyderabad, Telangana-500073
         </p>
         <p><i class="fa fa-phone-alt me-3"></i>+91 7997180616</p>
-        <p><i class="fa fa-envelope me-3"></i>info@nsureinsurance.com</p>
+        <p><i class="fa fa-envelope me-3"></i>policy@nsureinsurance.com</p>
       </div>
 
       <!-- Vision Section -->
