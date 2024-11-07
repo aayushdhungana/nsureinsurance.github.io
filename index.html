@@ -781,106 +781,171 @@
         </div>
 
         <!-- FAQ Content Sections -->
-        <div class="faq-items" id="car" style="display: block;">
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <style>
+        .faq-section {
+            padding: 50px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .faq-tab-image {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: border 0.3s ease, transform 0.3s ease;
+        }
+        .faq-tab-image:hover {
+            border: 2px solid #555;
+            transform: scale(1.05);
+        }
+        .faq-items {
+            display: none;
+            text-align: left;
+        }
+        .faq-items.active {
+            display: block;
+        }
+        .faq-content {
+            margin-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .faq-question {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #444;
+            cursor: pointer;
+        }
+        .faq-answer {
+            font-size: 16px;
+            color: #666;
+            display: none;
+        }
+        .faq-item:hover .faq-answer {
+            display: block;
+        }
+        .read-more {
+            color: #007BFF;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="faq" class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">Click on a category to view related FAQs.</p>
+
+        <div class="faq-tabs">
+            <img src="car-icon.jpg" alt="Car FAQs" class="faq-tab-image" onclick="showFaqSection('car')" />
+            <img src="bike-icon.jpg" alt="Bike FAQs" class="faq-tab-image" onclick="showFaqSection('bike')" />
+            <img src="life-icon.jpg" alt="Life FAQs" class="faq-tab-image" onclick="showFaqSection('life')" />
+            <img src="health-icon.jpg" alt="Health FAQs" class="faq-tab-image" onclick="showFaqSection('health')" />
+        </div>
+
+        <div class="faq-items" id="car">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What does car insurance cover?</h4>
                     <p class="faq-answer">Car insurance covers damages to your vehicle, third-party liability, and personal injury. Comprehensive plans may also include protection against fire, theft, and natural disasters.</p>
                 </div>
-                <!-- Additional car FAQs -->
+                <div class="faq-item">
+                    <h4 class="faq-question">What are the different types of car insurance?</h4>
+                    <p class="faq-answer">The two main types are third-party insurance and comprehensive insurance, covering damage to both your vehicle and third parties.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">How can I file a car insurance claim?</h4>
+                    <p class="faq-answer">To file a claim, notify your insurer, submit necessary documents, and complete their claims process.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What factors affect my car insurance premium?</h4>
+                    <p class="faq-answer">Premiums depend on factors like car make and model, age, driver’s history, and chosen coverage type.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">What is the IDV in car insurance?</h4>
+                    <p class="faq-answer">IDV is the maximum sum insured by the insurer in case of total loss or theft, calculated based on market value.</p>
+                </div>
+                <span class="read-more" onclick="showAll('car')">Read more...</span>
             </div>
         </div>
 
-        <div class="faq-items" id="bike" style="display: none;">
+        <div class="faq-items" id="bike">
             <div class="faq-content">
                 <div class="faq-item">
-                    <h4 class="faq-question">What is covered under bike insurance?</h4>
-                    <p class="faq-answer">Bike insurance typically covers damages to your motorcycle, third-party liability, and injuries to the rider.</p>
+                    <h4 class="faq-question">What does bike insurance cover?</h4>
+                    <p class="faq-answer">Bike insurance covers damages to the motorcycle, third-party liability, and rider injuries.</p>
                 </div>
                 <!-- Additional bike FAQs -->
+                <span class="read-more" onclick="showAll('bike')">Read more...</span>
             </div>
         </div>
 
-        <div class="faq-items" id="life" style="display: none;">
+        <div class="faq-items" id="life">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What does life insurance cover?</h4>
-                    <p class="faq-answer">Life insurance provides financial protection to the policyholder's beneficiaries in case of the policyholder’s death.</p>
+                    <p class="faq-answer">Life insurance provides financial protection to the policyholder's beneficiaries in case of death.</p>
                 </div>
                 <!-- Additional life FAQs -->
+                <span class="read-more" onclick="showAll('life')">Read more...</span>
             </div>
         </div>
 
-        <div class="faq-items" id="health" style="display: none;">
+        <div class="faq-items" id="health">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What is covered under health insurance?</h4>
-                    <p class="faq-answer">Health insurance covers medical expenses, including hospitalization, treatment, and medication costs, as per the policy terms.</p>
+                    <p class="faq-answer">Health insurance covers medical expenses, including hospitalization, treatment, and medication costs.</p>
                 </div>
                 <!-- Additional health FAQs -->
+                <span class="read-more" onclick="showAll('health')">Read more...</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    /* Basic styling for FAQ section */
-    .faq-section {
-        padding: 50px;
-        background-color: #f9f9f9;
-        text-align: center;
-    }
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-    .faq-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-    .faq-tab-image {
-        width: 100px; /* Adjust size as needed */
-        height: auto;
-        cursor: pointer;
-        border: 2px solid transparent;
-        border-radius: 10px;
-        transition: border 0.3s ease, transform 0.3s ease;
-    }
-    .faq-tab-image:hover {
-        border: 2px solid #555;
-        transform: scale(1.05);
-    }
-    .faq-content {
-        margin-top: 15px;
-        border-top: 1px solid #ddd;
-    }
-    .faq-item {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 0;
-    }
-    .faq-question {
-        font-size: 18px;
-        margin: 10px 0;
-        font-weight: bold;
-        color: #444;
-    }
-    .faq-answer {
-        font-size: 16px;
-        color: #666;
-    }
-</style>
+    <script>
+        function showFaqSection(sectionId) {
+            var sections = document.querySelectorAll('.faq-items');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                }
+            });
+        }
 
-<script>
-    function showFaqSection(sectionId) {
-        var sections = document.querySelectorAll('.faq-items');
-        sections.forEach(section => {
-            section.style.display = section.id === sectionId ? 'block' : 'none';
-        });
-    }
-</script>
+        function showAll(sectionId) {
+            var faqItems = document.querySelectorAll(`#${sectionId} .faq-item`);
+            faqItems.forEach(item => item.style.display = 'block');
+        }
+    </script>
+</body>
+</html>
+
 
 
 
