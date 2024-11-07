@@ -746,51 +746,67 @@
 <section id="faq" class="faq-section">
     <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-description">Answers to common questions, with a focus on car insurance and related topics.</p>
+        <p class="section-description">Choose a category to view related FAQs.</p>
 
-        <div class="faq-items">
-            <!-- FAQ Item List -->
+        <!-- FAQ Category Tabs -->
+        <div class="faq-tabs">
+            <button class="faq-tab active" onclick="showFaqSection('car')">Car</button>
+            <button class="faq-tab" onclick="showFaqSection('bike')">Bike</button>
+            <button class="faq-tab" onclick="showFaqSection('life')">Life</button>
+            <button class="faq-tab" onclick="showFaqSection('health')">Health</button>
+        </div>
+
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">Click on a category to view related FAQs.</p>
+
+        <!-- Image Buttons for FAQ Categories -->
+        <div class="faq-tabs">
+            <img src="img/car-icon.png" alt="Car FAQs" class="faq-tab-image" onclick="showFaqSection('car')" />
+            <img src="img/bikeinsurance.png" alt="Bike FAQs" class="faq-tab-image" onclick="showFaqSection('bike')" />
+            <img src="img/life-icon.png" alt="Life FAQs" class="faq-tab-image" onclick="showFaqSection('life')" />
+            <img src="img/health-icon.png" alt="Health FAQs" class="faq-tab-image" onclick="showFaqSection('health')" />
+        </div>
+
+        <!-- FAQ Content Sections -->
+        <div class="faq-items" id="car" style="display: block;">
             <div class="faq-content">
                 <div class="faq-item">
                     <h4 class="faq-question">What does car insurance cover?</h4>
                     <p class="faq-answer">Car insurance covers damages to your vehicle, third-party liability, and personal injury. Comprehensive plans may also include protection against fire, theft, and natural disasters.</p>
                 </div>
+                <!-- Additional car FAQs -->
+            </div>
+        </div>
 
+        <div class="faq-items" id="bike" style="display: none;">
+            <div class="faq-content">
                 <div class="faq-item">
-                    <h4 class="faq-question">What are the different types of car insurance?</h4>
-                    <p class="faq-answer">The two main types are third-party insurance (covering third-party damage) and comprehensive insurance, which includes damage to both your vehicle and third parties.</p>
+                    <h4 class="faq-question">What is covered under bike insurance?</h4>
+                    <p class="faq-answer">Bike insurance typically covers damages to your motorcycle, third-party liability, and injuries to the rider.</p>
                 </div>
+                <!-- Additional bike FAQs -->
+            </div>
+        </div>
 
+        <div class="faq-items" id="life" style="display: none;">
+            <div class="faq-content">
                 <div class="faq-item">
-                    <h4 class="faq-question">How can I file a car insurance claim?</h4>
-                    <p class="faq-answer">To file a claim, notify your insurer, submit necessary documents, and complete their claims process. Your insurer will assess the damages and approve the claim if eligible.</p>
+                    <h4 class="faq-question">What does life insurance cover?</h4>
+                    <p class="faq-answer">Life insurance provides financial protection to the policyholder's beneficiaries in case of the policyholder’s death.</p>
                 </div>
+                <!-- Additional life FAQs -->
+            </div>
+        </div>
 
+        <div class="faq-items" id="health" style="display: none;">
+            <div class="faq-content">
                 <div class="faq-item">
-                    <h4 class="faq-question">What factors affect my car insurance premium?</h4>
-                    <p class="faq-answer">Premiums depend on factors like car make and model, age, the driver’s history, and the chosen coverage type.</p>
+                    <h4 class="faq-question">What is covered under health insurance?</h4>
+                    <p class="faq-answer">Health insurance covers medical expenses, including hospitalization, treatment, and medication costs, as per the policy terms.</p>
                 </div>
-
-                <div class="faq-item">
-                    <h4 class="faq-question">What is the IDV (Insured Declared Value) in car insurance?</h4>
-                    <p class="faq-answer">IDV is the maximum sum insured by the insurer in case of total loss or theft of the vehicle, calculated based on the car's market value.</p>
-                </div>
-
-                <!-- Additional questions -->
-                <div class="faq-item">
-                    <h4 class="faq-question">How can I lower my car insurance premium?</h4>
-                    <p class="faq-answer">You can lower premiums by opting for a higher deductible, maintaining a good driving record, and choosing only necessary coverage.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4 class="faq-question">What documents are required for car insurance?</h4>
-                    <p class="faq-answer">Typically, you need to provide the car’s registration details, identity proof, and address proof to purchase or renew car insurance.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4 class="faq-question">Can I transfer my car insurance to a new owner if I sell my car?</h4>
-                    <p class="faq-answer">Yes, the insurance policy can be transferred to the new owner with proper documentation and approval from the insurer.</p>
-                </div>
+                <!-- Additional health FAQs -->
             </div>
         </div>
     </div>
@@ -801,35 +817,58 @@
     .faq-section {
         padding: 50px;
         background-color: #f9f9f9;
-        text-align: left;
+        text-align: center;
     }
     .section-title {
         font-size: 28px;
         margin-bottom: 20px;
         color: #333;
     }
+    .faq-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .faq-tab-image {
+        width: 100px; /* Adjust size as needed */
+        height: auto;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        transition: border 0.3s ease, transform 0.3s ease;
+    }
+    .faq-tab-image:hover {
+        border: 2px solid #555;
+        transform: scale(1.05);
+    }
+    .faq-content {
+        margin-top: 15px;
+        border-top: 1px solid #ddd;
+    }
     .faq-item {
-        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
     }
     .faq-question {
         font-size: 18px;
         margin: 10px 0;
         font-weight: bold;
         color: #444;
-        cursor: pointer;
     }
     .faq-answer {
         font-size: 16px;
         color: #666;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-    .faq-item:hover .faq-answer {
-        max-height: 100px; /* Adjust based on the length of answer */
     }
 </style>
 
+<script>
+    function showFaqSection(sectionId) {
+        var sections = document.querySelectorAll('.faq-items');
+        sections.forEach(section => {
+            section.style.display = section.id === sectionId ? 'block' : 'none';
+        });
+    }
 
 
 
